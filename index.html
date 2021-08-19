@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Test</title>
+</head>
+<body >
+    <button class="btn" onclick="menuItem(event)">MENU</button>
+    <div class="container" onclick="colorChange()">
+        <h1 class='blur'>HELLO  <br>WORLD</br></h1>
+    </div>
+
+     <div class="home" onclick="colorChange()">
+        <p class='hometag'>HOME</p>
+        <p class="about">ABOUT</p>
+        <p class="contact">CONTACT</p>
+    </div>
+     
+    
+    <script>
+        const colorChange = () =>{
+    document.querySelector('.btn').style.animation="colorchange 2s "
+ }
+
+ const menuItem = (e) =>{
+     e.preventDefault()
+     if(e.target.innerText === "MENU"){
+        e.target.innerText ='CLOSE'
+          document.querySelector('.home').style.visibility ='visible'
+          document.querySelector('.home').style.background ='#775253'
+          document.querySelector('.home').style.opacity ='0.5'
+          document.querySelector('.container').style.opacity='0.9' 
+          document.querySelector('.blur').style.filter='blur(7px)'     
+          document.querySelector('.btn').style.cssText="color: #DFE0DC; border:2px solid #DFE0DC; background:rgba(119, 82, 83, 0);"
+     } else if(e.target.innerText ="CLOSE"){
+         e.target.innerText ="MENU"
+         document.querySelector('.container').style.opacity='1'
+         document.querySelector('.home').style.visibility ='hidden'
+         document.querySelector('.btn').style.cssText="background:#D1D3C4;"
+          document.querySelector('.blur').style.filter=''
+    
+
+    }
+ }
+    </script>
+   
+</body>
+</html>
